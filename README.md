@@ -135,7 +135,7 @@ You can customize your OpenApi document with ***Transformers*** on three categor
 
 [Scalar](https://scalar.com/) is an open-source interactive document UI for OpenAPI. A nuget package **Scalar.AspNetCore** is available to add UI endpoint through ```app.MapScalarApiReference();``` code line.
 
-![Scalar UI](image.png)
+![Scalar UI](./.documentation/scalar.png)
 
 ### Spectral linter
 
@@ -171,7 +171,7 @@ Now you can launch Spectral to have warning/errors with command :
 
 ```spectral lint openapi_sessions.json```
 
-![spectral linter example](image-1.png)
+![spectral linter example](./.documentation/spectral-result.png)
 ## 🔗 Useful Resources
 
 - [OpenAPI documentation for .NET 9](https://learn.microsoft.com/en-us/aspnet/core/fundamentals/openapi/overview?view=aspnetcore-9.0)
