@@ -1,0 +1,34 @@
+# EditorConfig is awesome: https://EditorConfig.org
+
+# top-most EditorConfig file
+root = true
+
+[*]
+indent_style = space
+indent_size = 4
+end_of_line = crlf
+charset = utf-8
+trim_trailing_whitespace = true
+insert_final_newline = false
+
+# Specific settings for JSON files
+[*.json]
+indent_style = space
+indent_size = 2
+
+# Specific settings for Markdown files
+[*.md]
+max_line_length = off
+trim_trailing_whitespace = false
+
+# Set severity for all analyzers that are enabled by default (https://docs.microsoft.com/en-us/visualstudio/code-quality/use-roslyn-analyzers?view=vs-2022#set-rule-severity-of-multiple-analyzer-rules-at-once-in-an-editorconfig-file)
+dotnet_analyzer_diagnostic.category-roslynator.severity = default|none|silent|suggestion|warning|error
+roslynator_analyzers.enabled_by_default = true|false
+
+dotnet_diagnostic.all.severity = default|none|silent|suggestion|warning|error
+roslynator_refactorings.enabled = true|false
+roslynator_refactoring.all.enabled = true|false
+roslynator_compiler_diagnostic_fixes.enabled = true|false
+
+# Enable/disable specific compiler diagnostic fix
+roslynator_compiler_diagnostic_fix.all.enabled = true|false

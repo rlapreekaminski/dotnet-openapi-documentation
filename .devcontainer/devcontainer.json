@@ -1,0 +1,33 @@
+{
+  "name": "dotnet-openapi-documentation",
+  "build": {
+    "dockerfile": "Dockerfile",
+    "context": ".."
+  },
+  "runArgs": [
+    "--name",
+    "dotnet-openapi-documentation"
+  ],
+  "features": {},
+  "postCreateCommand": "dotnet restore",
+  "customizations": {
+    "vscode": {
+      "settings": {
+        "editor.formatOnSave": true
+      },
+      "extensions": [
+        "ms-dotnettools.csharp",
+        "ms-dotnettools.csdevkit",
+        "editorconfig.editorconfig"
+      ]
+    }
+  },
+  "forwardPorts": [
+    5002,
+    7002
+  ],
+  "mounts": [
+    "source=/var/run/docker.sock,target=/var/run/docker.sock,type=bind"
+  ],
+  "remoteUser": "vscode"
+}
