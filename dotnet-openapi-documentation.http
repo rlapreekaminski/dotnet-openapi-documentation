@@ -1,6 +1,0 @@
-@dotnet_openapi_documentation_HostAddress = http://localhost:5100
-
-GET {{dotnet_openapi_documentation_HostAddress}}/weatherforecast/
-Accept: application/json
-
-###

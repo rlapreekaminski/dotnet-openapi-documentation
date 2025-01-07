@@ -13,7 +13,7 @@ RUN curl -sSL https://aka.ms/getvsdbgsh | bash /dev/stdin -v latest -l /vsdbg
 # Installer les dépendances nécessaires pour Node.js
 RUN apt-get update && apt-get install -y curl
 
-# Installer NVM (Node Version Manager)
+# Installer Node.js et Spectral
 RUN curl -fsSL https://deb.nodesource.com/setup_18.x | bash - \
   && apt-get install -y nodejs \
   && npm install -g @stoplight/spectral-cli
@@ -22,7 +22,7 @@ RUN curl -fsSL https://deb.nodesource.com/setup_18.x | bash - \
 RUN apt-get clean && rm -rf /var/lib/apt/lists/*
 
 # Expose les ports pour .NET Minimal API (HTTP et HTTPS)
-EXPOSE 5002 7002
+EXPOSE 5100 7085
 
 # Définit le point d'entrée par défaut
 CMD ["sleep", "infinity"]

@@ -76,6 +76,7 @@
           {
             "name": "id",
             "in": "path",
+            "description": "Session unique identifier",
             "required": true,
             "schema": {
               "type": "string",
@@ -113,6 +114,7 @@
           {
             "name": "id",
             "in": "path",
+            "description": "Session unique identifier",
             "required": true,
             "schema": {
               "type": "string",
@@ -121,6 +123,7 @@
           }
         ],
         "requestBody": {
+          "description": "Updated session",
           "content": {
             "application/json": {
               "schema": {
@@ -160,6 +163,7 @@
           {
             "name": "id",
             "in": "path",
+            "description": "Session unique identifier",
             "required": true,
             "schema": {
               "type": "string",

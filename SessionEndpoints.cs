@@ -1,4 +1,7 @@
 
+using System.ComponentModel;
+using System.Reflection;
+
 public static class SessionEndpoints
 {
     public static RouteGroupBuilder MapSessions(this RouteGroupBuilder group)
@@ -9,7 +12,7 @@ public static class SessionEndpoints
             .WithDescription("Retrieves all sessions from the database.")
             .WithName(nameof(GetSessions));
 
-        group.MapGet("/{id}", (Guid id) => GetSession(id))
+        group.MapGet("/{id}", ([Description("Session unique identifier")] Guid id) => GetSession(id))
             .WithSummary("Get a session by ID")
             .WithDescription("Retrieves a session from the database by its ID.")
             .WithName(nameof(GetSession))
@@ -22,14 +25,14 @@ public static class SessionEndpoints
             .WithName(nameof(CreateSession))
             .Produces<Session>(StatusCodes.Status201Created);
 
-        group.MapPut("/{id}", (Guid id, Session sessionUpdated) => UpdateSession(id, sessionUpdated))
+        group.MapPut("/{id}", ([Description("Session unique identifier")] Guid id, [Description("Updated session")] Session sessionUpdated) => UpdateSession(id, sessionUpdated))
             .WithSummary("Update a session by ID")
             .WithDescription("Updates a session in the database by its ID.")
             .WithName(nameof(UpdateSession))
             .Produces<Session>(StatusCodes.Status200OK)
             .Produces(StatusCodes.Status404NotFound); ;
 
-        group.MapDelete("/{id}", (Guid id) => DeleteSession(id))
+        group.MapDelete("/{id}", ([Description("Session unique identifier")] Guid id) => DeleteSession(id))
             .WithSummary("Delete a session by ID")
             .WithDescription("Deletes a session from the database by its ID.")
             .WithName(nameof(DeleteSession))

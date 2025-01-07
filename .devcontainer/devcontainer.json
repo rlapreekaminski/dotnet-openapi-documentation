@@ -23,8 +23,8 @@
     }
   },
   "forwardPorts": [
-    5002,
-    7002
+    5100,
+    7085
   ],
   "mounts": [
     "source=/var/run/docker.sock,target=/var/run/docker.sock,type=bind"
